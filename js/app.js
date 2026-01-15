@@ -1,7 +1,5 @@
 // ===== DOM Elements =====
 const filter_btns = document.querySelectorAll(".filter-btn");
-const skills_wrap = document.querySelector(".skills");
-const skills_bars = document.querySelectorAll(".skill-progress");
 const records_wrap = document.querySelector(".records");
 const records_numbers = document.querySelectorAll(".number");
 const footer_input = document.querySelector(".footer-input");
@@ -81,11 +79,9 @@ $(".grid").isotope({
 });
 
 // ===== Scroll Effects =====
-let skillsAnimated = false;
 let recordsAnimated = false;
 
 window.addEventListener("scroll", () => {
-  skillsEffect();
   countUp();
   updateNavOnScroll();
 });
@@ -94,18 +90,6 @@ function checkScroll(el) {
   if (!el) return false;
   let rect = el.getBoundingClientRect();
   return window.innerHeight >= rect.top + el.offsetHeight * 0.5;
-}
-
-// ===== Skills Animation =====
-function skillsEffect() {
-  if (skillsAnimated || !checkScroll(skills_wrap)) return;
-  skillsAnimated = true;
-  
-  skills_bars.forEach((skill, index) => {
-    setTimeout(() => {
-      skill.style.width = skill.dataset.progress;
-    }, index * 100);
-  });
 }
 
 // ===== Counter Animation =====
@@ -165,17 +149,20 @@ var mySwiper = new Swiper(".swiper-container", {
   slidesPerView: 1,
   loop: true,
   autoplay: {
-    delay: 5000,
+    delay: 4000,
     disableOnInteraction: false,
+    pauseOnMouseEnter: true,
   },
   navigation: {
     prevEl: ".swiper-button-prev",
     nextEl: ".swiper-button-next",
   },
-  effect: "fade",
-  fadeEffect: {
-    crossFade: true
-  }
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  effect: "slide",
+  grabCursor: true,
 });
 
 // ===== Smooth Scroll for Anchor Links =====
@@ -219,9 +206,33 @@ window.addEventListener("scroll", () => {
 // ===== Initialize on Load =====
 document.addEventListener("DOMContentLoaded", () => {
   // Trigger initial scroll check
-  skillsEffect();
   countUp();
   
   // Add loaded class for any initial animations
   document.body.classList.add("loaded");
+  
+  // Initialize theme from localStorage
+  initTheme();
 });
+
+// ===== Theme Toggle =====
+const themeToggle = document.getElementById("themeToggle");
+
+function initTheme() {
+  const savedTheme = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  
+  if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+    document.body.classList.add("dark-mode");
+  }
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    
+    // Save preference
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
+}

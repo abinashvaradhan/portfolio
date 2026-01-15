@@ -22,54 +22,78 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <i class="fas fa-moon"></i>
+      <i class="fas fa-sun"></i>
+    </button>
+
     <main>
       <header id="header">
         <div class="overlay overlay-lg">
           <img
             src="./img/shapes/square.png"
             class="shape square"
-            alt="square shape rawquesh"
+            alt="square shape"
           />
           <img
             src="./img/shapes/circle.png"
             class="shape circle"
-            alt="circle shape rawquesh"
-          />
-          <img
-            src="./img/shapes/half-circle.png"
-            class="shape half-circle1"
-            alt="half circle shape rawquesh"
-          />
-          <img
-            src="./img/shapes/half-circle.png"
-            class="shape half-circle2"
-            alt="half circle shape rawquesh"
+            alt="circle shape"
           />
           <img
             src="./img/shapes/x.png"
             class="shape xshape"
-            alt="shapes rawquesh"
+            alt="x shape"
           />
           <img
             src="./img/shapes/wave.png"
             class="shape wave wave1"
-            alt="wave shape rawquesh"
+            alt="wave shape"
           />
           <img
             src="./img/shapes/wave.png"
             class="shape wave wave2"
-            alt="wave shape rawquesh"
+            alt="wave shape"
           />
           <img
             src="./img/shapes/triangle.png"
             class="shape triangle"
-            alt="triangle shape rawquesh"
+            alt="triangle shape"
           />
-          <img
-            src="./img/shapes/points1.png"
-            class="points points1"
-            alt="points rawquesh"
-          />
+          
+          <!-- Floating DevOps Logos -->
+          <div class="floating-logos">
+            <div class="floating-logo logo-docker">
+              <i class="fab fa-docker"></i>
+            </div>
+            <div class="floating-logo logo-aws">
+              <i class="fab fa-aws"></i>
+            </div>
+            <div class="floating-logo logo-jenkins">
+              <i class="fab fa-jenkins"></i>
+            </div>
+            <div class="floating-logo logo-linux">
+              <i class="fab fa-linux"></i>
+            </div>
+            <div class="floating-logo logo-python">
+              <i class="fab fa-python"></i>
+            </div>
+            <div class="floating-logo logo-github">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="floating-logo logo-terraform">
+              <svg viewBox="0 0 128 128" width="100%" height="100%">
+                <path fill="currentColor" d="M77.941 44.5v36.836L46.324 62.918V26.082zm0 42.138L46.324 105.315V68.479l31.617-18.677zM81.41 81.637l31.617-18.676V26.125L81.41 44.8zm0-62.809L49.793 0v36.836l31.617 18.676z"/>
+              </svg>
+            </div>
+            <div class="floating-logo logo-git">
+              <i class="fab fa-git-alt"></i>
+            </div>
+            <div class="floating-logo logo-cloud">
+              <i class="fab fa-google"></i>
+            </div>
+          </div>
         </div>
 
         <nav>
@@ -151,129 +175,100 @@
       <section class="services section" id="services">
         <div class="container">
           <div class="section-header">
-             <h3 class="title">What I do ?</h3>
+             <h3 class="title" data-title="Services">What I do</h3>
             <p class="text">
-              I can help your business deliver software faster and with fewer errors by automating workflows, managing cloud infrastructure, and ensuring your systems run smoothly and securely.
+              I help businesses deliver software faster and with fewer errors by automating workflows, managing cloud infrastructure, and ensuring systems run smoothly and securely.
             </p>
           </div>
           <div class="cards">
             <div class="card-wrap">
-              <img
-                src="./img/shapes/points3.png"
-                class="points points1 points-sq"
-                alt="points square rawquesh"
-              />
-              <div class="card" data-card="Web">
+              <div class="card" data-card="AWS">
                 <div class="card-content z-index">
-                  <img
-                    src="./img/services/web.png"
-                    class="icon"
-                    alt="web development showcase rawquesh"
-                  />
-                  <h3 class="title-sm">AWS/GCP infra setup</h3>
+                  <div class="icon-wrap">
+                    <i class="fab fa-aws"></i>
+                  </div>
+                  <h3 class="title-sm">AWS/GCP Infrastructure</h3>
                   <p class="text">
-                    Helping start-ups, small businesses, and agencies build secure, scalable, and cost-efficient AWS infrastructure for high performance and reliability.
+                    Building secure, scalable, and cost-efficient cloud infrastructure for high performance and reliability.
                   </p>
-                  <a href="mailto:abinash@devopsmind.me" class="btn small"
-                    >Hire me</a
-                  >
+                  <a href="mailto:abinash@devopsmind.me" class="btn small">Hire me</a>
                 </div>
               </div>
             </div>
 
             <div class="card-wrap">
-              <div class="card" data-card="App">
+              <div class="card" data-card="IaC">
                 <div class="card-content z-index">
-                  <img
-                    src="./img/services/android.png"
-                    class="icon"
-                    alt="android development showcase rawquesh"
-                  />
+                  <div class="icon-wrap terraform">
+                    <svg viewBox="0 0 128 128" width="32" height="32">
+                      <path fill="currentColor" d="M77.941 44.5v36.836L46.324 62.918V26.082zm0 42.138L46.324 105.315V68.479l31.617-18.677zM81.41 81.637l31.617-18.676V26.125L81.41 44.8zm0-62.809L49.793 0v36.836l31.617 18.676z"/>
+                    </svg>
+                  </div>
                   <h3 class="title-sm">Infrastructure as Code</h3>
                   <p class="text">
-                    I design and implement Infrastructure as Code solutions using tools like Terraform, Ansible, and CloudFormation to provision, manage, and scale cloud resources in a consistent, automated, and repeatable way.
+                    Implementing IaC solutions using Terraform, Ansible, and CloudFormation for consistent, automated infrastructure.
                   </p>
-                  <a href="mailto:abinash@devopsmin.me" class="btn small"
-                    >Hire me</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="card-wrap">
-              <div class="card" data-card="iOS">
-                <div class="card-content z-index">
-                  <img
-                    src="./img/services/ios.png"
-                    class="icon"
-                    alt="ios development showcase rawquesh"
-                  />
-                  <h3 class="title-sm">CICD</h3>
-                  <p class="text">
-                     I set up Continuous Integration and Continuous Deployment pipelines to automate building, testing, and releasing software, enabling faster delivery with fewer errors and more reliable updates.
-                  </p>
-                  <a href="mailto:abinash@devopsmin.me" class="btn small"
-                    >Hire me</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="card-wrap">
-              <div class="card" data-card="WP">
-                <div class="card-content z-index">
-                  <img
-                    src="./img/services/wordpress.png"
-                    class="icon"
-                    alt="wordpress showcase rawquesh"
-                  />
-                  <h3 class="title-sm">Container Orchestration</h3>
-                  <p class="text">
-                    I design and manage container orchestration solutions using Kubernetes, Helm, and related tools to deploy, scale, and maintain containerized applications with high availability and efficiency
-                  </p>
-                  <a href="mailto:abinash@devopsmind.me" class="btn small"
-                    >Hire me</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="card-wrap">
-              <div class="card" data-card="Store">
-                <div class="card-content z-index">
-                  <img
-                    src="./img/services/online-store100.png"
-                    class="icon"
-                    alt="online store showcase rawquesh"
-                  />
-                  <h3 class="title-sm">Cost Optimization</h3>
-                  <p class="text">
-                    I analyze and optimize your cloud infrastructure to reduce costs without sacrificing performance or security, ensuring you get the best value from your resources.
-                  </p>
-                  <a href="mailto:abinash@devopsmind.me" class="btn small"
-                    >Hire me</a
-                  >
+                  <a href="mailto:abinash@devopsmind.me" class="btn small">Hire me</a>
                 </div>
               </div>
             </div>
 
             <div class="card-wrap">
-              <img
-                src="./img/shapes/points3.png"
-                class="points points2 points-sq"
-                alt=""
-              />
-              <div class="card" data-card="DB">
+              <div class="card" data-card="CI">
                 <div class="card-content z-index">
-                  <img
-                    src="./img/services/database.png"
-                    class="icon"
-                    alt="database Backend showcase rawquesh"
-                  />
+                  <div class="icon-wrap cicd">
+                    <i class="fab fa-jenkins"></i>
+                  </div>
+                  <h3 class="title-sm">CI/CD Pipelines</h3>
+                  <p class="text">
+                    Setting up automated pipelines for building, testing, and deploying software with faster delivery cycles.
+                  </p>
+                  <a href="mailto:abinash@devopsmind.me" class="btn small">Hire me</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-wrap">
+              <div class="card" data-card="K8s">
+                <div class="card-content z-index">
+                  <div class="icon-wrap kubernetes">
+                    <i class="fas fa-dharmachakra"></i>
+                  </div>
+                  <h3 class="title-sm">Container Orchestration</h3>
+                  <p class="text">
+                    Managing Kubernetes clusters with Helm for deploying and scaling containerized applications efficiently.
+                  </p>
+                  <a href="mailto:abinash@devopsmind.me" class="btn small">Hire me</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-wrap">
+              <div class="card" data-card="$">
+                <div class="card-content z-index">
+                  <div class="icon-wrap cost">
+                    <i class="fas fa-coins"></i>
+                  </div>
+                  <h3 class="title-sm">Cost Optimization</h3>
+                  <p class="text">
+                    Analyzing and optimizing cloud infrastructure to reduce costs without sacrificing performance or security.
+                  </p>
+                  <a href="mailto:abinash@devopsmind.me" class="btn small">Hire me</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-wrap">
+              <div class="card" data-card="Log">
+                <div class="card-content z-index">
+                  <div class="icon-wrap monitoring">
+                    <i class="fas fa-chart-line"></i>
+                  </div>
                   <h3 class="title-sm">Logging & Monitoring</h3>
                   <p class="text">
-                    I set up robust logging and monitoring solutions using tools like Prometheus, Grafana, Loki, and ELK to track system performance, detect issues early, and ensure smooth and reliable operations.
+                    Setting up Prometheus, Grafana, and ELK stack for comprehensive system monitoring and alerting.
                   </p>
-                  <a href="mailto:abinash@devopsmind.me" class="btn small"
-                    >Hire me</a
-                  >
+                  <a href="mailto:abinash@devopsmind.me" class="btn small">Hire me</a>
                 </div>
               </div>
             </div>
@@ -284,154 +279,120 @@
       <!-- Portfolio section -->
 
       <section class="portfolio section" id="portfolio">
-        <div class="background-bg">
-          <div class="overlay overlay-sm">
-            <img
-              src="./img/shapes/half-circle.png"
-              class="shape half-circle1"
-              alt=""
-            />
-            <img
-              src="./img/shapes/half-circle.png"
-              class="shape half-circle2"
-              alt=""
-            />
-            <img src="./img/shapes/square.png" class="shape square" alt="" />
-            <img src="./img/shapes/wave.png" class="shape wave" alt="" />
-            <img src="./img/shapes/circle.png" class="shape circle" alt="" />
-            <img
-              src="./img/shapes/triangle.png"
-              class="shape triangle"
-              alt=""
-            />
-            <img src="./img/shapes/x.png" class="shape xshape" alt="" />
-          </div>
-        </div>
-
         <div class="container">
           <div class="section-header">
-            <h3 class="title">Portfolio</h3>
+            <h3 class="title" data-title="Projects">Portfolio</h3>
+            <p class="text">Featured projects showcasing my DevOps expertise in cloud infrastructure, CI/CD, and container orchestration.</p>
           </div>
 
-          <div class="section-body">
-            <div class="filter">
-              <button class="filter-btn active" data-filter="*">All</button>
-              <button class="filter-btn" data-filter=".appdev">
-                Mobile App
-              </button>
-              <button class="filter-btn" data-filter=".webdev">Web App</button>
-              <button class="filter-btn" data-filter=".wordpress">
-                WordPress
-              </button>
-              <!-- <button class="filter-btn" data-filter=".wordpress">
-                NodeJS
-              </button> -->
-            </div>
+          <div class="portfolio-grid">
+            <a href="https://github.com/abinashvaradhan/portfolio/blob/main/projects/edutinker/edutinker.png" target="_blank" class="portfolio-card">
+              <div class="portfolio-image">
+                <img src="./img/portfolio/edutinker.png" alt="Edutinker - ELearning Platform" />
+                <div class="portfolio-overlay">
+                  <i class="fas fa-external-link-alt"></i>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <div class="portfolio-tags">
+                  <span class="tag">AWS</span>
+                  <span class="tag">ECS</span>
+                  <span class="tag">RDS</span>
+                </div>
+                <h3 class="portfolio-title">Edutinker</h3>
+                <p class="portfolio-desc">E-Learning platform with scalable AWS infrastructure and automated deployments.</p>
+              </div>
+            </a>
 
-            <div class="grid">
-              <a
-                target="_blank"
-                href="https://github.com/abinashvaradhan/portfolio/blob/main/projects/edutinker/edutinker.png"
-              >
-                <div class="grid-item appdev">
-                  <div class="gallery-image">
-                    <img
-                      src="./img/portfolio/edutinker.png"
-                      alt="Elearning platform"
-                    />
-                    <div class="img-overlay">
-                      <div class="plus"></div>
-                      <div class="img-description">
-                        <h3>Edutinker - ELearning Platform</h3>
-                      </div>
-                    </div>
-                  </div>
+            <a href="https://github.com/abinashvaradhan/portfolio/blob/main/projects/secondfit/secondfit.gif" target="_blank" class="portfolio-card">
+              <div class="portfolio-image">
+                <img src="./img/portfolio/secondfit.png" alt="Secondfit - E-commerce Platform" />
+                <div class="portfolio-overlay">
+                  <i class="fas fa-external-link-alt"></i>
                 </div>
-              </a>
-              <a target="_blank" href="https://github.com/abinashvaradhan/portfolio/blob/main/projects/secondfit/secondfit.gif">
-                <div class="grid-item webdev">
-                  <div class="gallery-image">
-                    <img
-                      src="./img/portfolio/secondfit.png"
-                      alt="E-commerce Platform"
-                    />
-                    <div class="img-overlay">
-                      <div class="plus"></div>
-                      <div class="img-description">
-                        <h3>Secondfit - E-commerce Platform</h3>
-                    </div>
-                    </div>
-                  </div>
+              </div>
+              <div class="portfolio-content">
+                <div class="portfolio-tags">
+                  <span class="tag">Kubernetes</span>
+                  <span class="tag">Helm</span>
+                  <span class="tag">CI/CD</span>
                 </div>
-              </a>
-              <a target="_blank" href="https://github.com/abinashvaradhan/portfolio/blob/main/projects/healthbridge/healthbridge.png">
-                <div class="grid-item appdev">
-                  <div class="gallery-image">
-                    <img
-                      src="./img/portfolio/healthbridge.png"
-                      alt="Serverless App in GCP"
-                    />
-                    <div class="img-overlay">
-                      <div class="plus"></div>
-                      <div class="img-description">
-                        <h3>Bridgehealthhub - Serverless App in GCP</h3>
-                      </div>
-                    </div>
-                  </div>
+                <h3 class="portfolio-title">Secondfit</h3>
+                <p class="portfolio-desc">E-commerce platform with Kubernetes orchestration and GitOps deployment.</p>
+              </div>
+            </a>
+
+            <a href="https://github.com/abinashvaradhan/portfolio/blob/main/projects/healthbridge/healthbridge.png" target="_blank" class="portfolio-card">
+              <div class="portfolio-image">
+                <img src="./img/portfolio/healthbridge.png" alt="Healthbridge - Serverless App" />
+                <div class="portfolio-overlay">
+                  <i class="fas fa-external-link-alt"></i>
                 </div>
-              </a>
-              <a target="_blank" href="https://github.com/abinashvaradhan/portfolio/blob/main/projects/uprise/uprise.png">
-                <div class="grid-item webdev">
-                  <div class="gallery-image">
-                    <img
-                      src="./img/portfolio/uprise.png"
-                      alt="Uprise - Personal Finance Management"
-                    />
-                    <div class="img-overlay">
-                      <div class="plus"></div>
-                      <div class="img-description">
-                        <h3>Uprise - Personal Finance Management</h3>
-                      </div>
-                    </div>
-                  </div>
+              </div>
+              <div class="portfolio-content">
+                <div class="portfolio-tags">
+                  <span class="tag">GCP</span>
+                  <span class="tag">Serverless</span>
+                  <span class="tag">Cloud Run</span>
                 </div>
-              </a>
-              <a target="_blank" href="https://github.com/abinashvaradhan/portfolio/blob/main/projects/cleanexpense/cleanexpense.png">
-                <div class="grid-item wordpress">
-                  <div class="gallery-image">
-                    <img
-                      src="./img/portfolio/cleanexpense.png"
-                      alt="Cleanexpense - Micro Finanace management App"
-                    />
-                    <div class="img-overlay">
-                      <div class="plus"></div>
-                      <div class="img-description">
-                        <h3>Cleanexpense - Micro Finanace management App</h3>
-                      </div>
-                    </div>
-                  </div>
+                <h3 class="portfolio-title">Bridgehealthhub</h3>
+                <p class="portfolio-desc">Healthcare platform built on GCP serverless architecture with auto-scaling.</p>
+              </div>
+            </a>
+
+            <a href="https://github.com/abinashvaradhan/portfolio/blob/main/projects/uprise/uprise.png" target="_blank" class="portfolio-card">
+              <div class="portfolio-image">
+                <img src="./img/portfolio/uprise.png" alt="Uprise - Finance Management" />
+                <div class="portfolio-overlay">
+                  <i class="fas fa-external-link-alt"></i>
                 </div>
-              </a>
-              <a
-                href="https://github.com/abinashvaradhan/portfolio/blob/main/projects/myearlybird/earlybird.gif"
-                target="_blank"
-              >
-                <div class="grid-item ui appdev">
-                  <div class="gallery-image">
-                    <img
-                      src="./img/portfolio/myearlybird.png"
-                      alt="AI Microservices Deployment in EKS"
-                    />
-                    <div class="img-overlay">
-                      <div class="plus"></div>
-                      <div class="img-description">
-                        <h3>MyEarlybird - AI Microservices Deployment in EKS</h3>
-                      </div>
-                    </div>
-                  </div>
+              </div>
+              <div class="portfolio-content">
+                <div class="portfolio-tags">
+                  <span class="tag">AWS</span>
+                  <span class="tag">Terraform</span>
+                  <span class="tag">Jenkins</span>
                 </div>
-              </a>
-            </div>
+                <h3 class="portfolio-title">Uprise</h3>
+                <p class="portfolio-desc">Finance management app with IaC infrastructure and zero-downtime deployments.</p>
+              </div>
+            </a>
+
+            <a href="https://github.com/abinashvaradhan/portfolio/blob/main/projects/cleanexpense/cleanexpense.png" target="_blank" class="portfolio-card">
+              <div class="portfolio-image">
+                <img src="./img/portfolio/cleanexpense.png" alt="Cleanexpense - Micro Finance App" />
+                <div class="portfolio-overlay">
+                  <i class="fas fa-external-link-alt"></i>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <div class="portfolio-tags">
+                  <span class="tag">Docker</span>
+                  <span class="tag">ECS Fargate</span>
+                  <span class="tag">Loki</span>
+                </div>
+                <h3 class="portfolio-title">Cleanexpense</h3>
+                <p class="portfolio-desc">Micro-finance app with containerized microservices and centralized logging.</p>
+              </div>
+            </a>
+
+            <a href="https://github.com/abinashvaradhan/portfolio/blob/main/projects/myearlybird/earlybird.gif" target="_blank" class="portfolio-card">
+              <div class="portfolio-image">
+                <img src="./img/portfolio/myearlybird.png" alt="MyEarlybird - AI Microservices" />
+                <div class="portfolio-overlay">
+                  <i class="fas fa-external-link-alt"></i>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <div class="portfolio-tags">
+                  <span class="tag">EKS</span>
+                  <span class="tag">Istio</span>
+                  <span class="tag">ArgoCD</span>
+                </div>
+                <h3 class="portfolio-title">MyEarlybird</h3>
+                <p class="portfolio-desc">AI microservices platform on EKS with service mesh and GitOps workflows.</p>
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -441,7 +402,7 @@
       <section class="about section" id="about">
         <div class="container">
           <div class="section-header">
-            <h3 class="title">About me</h3>
+            <h3 class="title" data-title="About">About me</h3>
           </div>
 
           <div class="section-body grid-2">
@@ -451,92 +412,163 @@
                 A passionate DevOps Engineer with experience in designing, automating, and managing cloud infrastructure on AWS, GCP, and Azure. Skilled in CI/CD pipelines, container orchestration with Kubernetes, Infrastructure as Code, and monitoring solutions to ensure secure, scalable, and high-performing systems.
               </p>
               <div class="skills">
-                <div class="skill Flutter">
-                  <h3 class="skill-title">AWS/GCP</h3>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-progress="95%"></div>
+                <div class="skills-grid">
+                  <div class="skill">
+                    <i class="fab fa-aws skill-icon"></i>
+                    <div class="skill-info">
+                      <h3 class="skill-title">AWS / GCP</h3>
+                      <div class="skill-rating">
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="skill ReactJS">
-                  <h3 class="skill-title">Terraform/Cloudformation/Terragrunt</h3>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-progress="95%"></div>
+                  <div class="skill">
+                    <i class="fas fa-cube skill-icon"></i>
+                    <div class="skill-info">
+                      <h3 class="skill-title">Terraform</h3>
+                      <div class="skill-rating">
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="skill NodeJS">
-                  <h3 class="skill-title">Ansible</h3>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-progress="93%"></div>
+                  <div class="skill">
+                    <i class="fas fa-cogs skill-icon"></i>
+                    <div class="skill-info">
+                      <h3 class="skill-title">Ansible</h3>
+                      <div class="skill-rating">
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="skill Laravel">
-                  <h3 class="skill-title">Docker</h3>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-progress="90%"></div>
+                  <div class="skill">
+                    <i class="fab fa-docker skill-icon"></i>
+                    <div class="skill-info">
+                      <h3 class="skill-title">Docker</h3>
+                      <div class="skill-rating">
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="skill WordPress">
-                  <h3 class="skill-title">Kubernetes</h3>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-progress="93%"></div>
+                  <div class="skill">
+                    <i class="fas fa-dharmachakra skill-icon"></i>
+                    <div class="skill-info">
+                      <h3 class="skill-title">Kubernetes</h3>
+                      <div class="skill-rating">
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="skill networking-tools">
-                  <h3 class="skill-title">Ingress/Istio/Keda/calico</h3>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-progress="95%"></div>
+                  <div class="skill">
+                    <i class="fas fa-project-diagram skill-icon"></i>
+                    <div class="skill-info">
+                      <h3 class="skill-title">Istio / Keda</h3>
+                      <div class="skill-rating">
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar"></span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="skill Firebase">
-                  <h3 class="skill-title">CICD/Jenkins/GithubActions</h3>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-progress="95%"></div>
+                  <div class="skill">
+                    <i class="fab fa-jenkins skill-icon"></i>
+                    <div class="skill-info">
+                      <h3 class="skill-title">CI/CD Pipelines</h3>
+                      <div class="skill-rating">
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="skill grafana">
-                  <h3 class="skill-title">Grafana/Prometheus/ELK</h3>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-progress="95%"></div>
+                  <div class="skill">
+                    <i class="fas fa-chart-area skill-icon"></i>
+                    <div class="skill-info">
+                      <h3 class="skill-title">Prometheus / Grafana</h3>
+                      <div class="skill-rating">
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                </div>
-                <div class="skill scripting">
-                  <h3 class="skill-title">BASH/Python</h3>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-progress="95%"></div>
+                  <div class="skill">
+                    <i class="fab fa-python skill-icon"></i>
+                    <div class="skill-info">
+                      <h3 class="skill-title">BASH / Python</h3>
+                      <div class="skill-rating">
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar"></span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                </div>
-                <div class="skill security">
-                  <h3 class="skill-title">Hashicorp Vault/AWS KMS/GCP KMS</h3>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-progress="95%"></div>
+                  <div class="skill">
+                    <i class="fas fa-key skill-icon"></i>
+                    <div class="skill-info">
+                      <h3 class="skill-title">Vault / KMS</h3>
+                      <div class="skill-rating">
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar"></span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="skill security-tools">
-                  <h3 class="skill-title">Cosign/Kyverno/OPA</h3>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-progress="95%"></div>
+                  <div class="skill">
+                    <i class="fas fa-anchor skill-icon"></i>
+                    <div class="skill-info">
+                      <h3 class="skill-title">Helm / Kustomize</h3>
+                      <div class="skill-rating">
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="skill backuptool">
-                  <h3 class="skill-title">Velero</h3>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-progress="95%"></div>
+                  <div class="skill">
+                    <i class="fas fa-database skill-icon"></i>
+                    <div class="skill-info">
+                      <h3 class="skill-title">Velero / Restic</h3>
+                      <div class="skill-rating">
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar filled"></span>
+                        <span class="bar"></span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="skill other-tools">
-                  <h3 class="skill-title">K9s/Cloudflare/Wazuh/Crowdstrike/Tanium</h3>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-progress="95%"></div>
-                  </div>
-                </div>
-                <div class="skill tools">
-                  <h3 class="skill-title">Helm/Kustomization</h3>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-progress="95%"></div>
-                  </div>
-                </div>
                 </div>
               </div>
             </div>
@@ -555,11 +587,6 @@
           <img src="./img/shapes/square.png" alt="" class="shape square1" />
           <img src="./img/shapes/square.png" alt="" class="shape square2" />
           <img src="./img/shapes/circle.png" alt="" class="shape circle" />
-          <img
-            src="./img/shapes/half-circle.png"
-            alt=""
-            class="shape half-circle"
-          />
           <img src="./img/shapes/wave.png" alt="" class="shape wave wave1" />
           <img src="./img/shapes/wave.png" alt="" class="shape wave wave2" />
           <img src="./img/shapes/x.png" alt="" class="shape xshape" />
@@ -695,6 +722,7 @@
                 <div class="review-nav swiper-button-next">
                   <i class="fas fa-long-arrow-alt-right"></i>
                 </div>
+                <div class="swiper-pagination"></div>
               </div>
             </div>
 
@@ -823,53 +851,35 @@
           <div class="grid-4-col footer-links">
             <h3 class="title-sm">Links</h3>
             <ul>
-              <li>
-                <a href="#services">Services</a>
-              </li>
-              <li>
-                <a href="#portfolio">Portfolio</a>
-              </li>
-              <li>
-                <a href="#about">About</a>
-              </li>
-
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
-
           <div class="grid-4-col footer-links">
             <h3 class="title-sm">Services</h3>
             <ul>
-              <li>
-                <a>AWS/GCP Setup</a>
-              </li>
-              <li>
-                <a>Docker/Kubernetes</a>
-              </li>
-              <li>
-                <a>Terraform</a>
-              </li>
-              <li>
-                <a>Jenkins/GithubActions</a>
-              </li>
+              <li><a href="#services">AWS/GCP Setup</a></li>
+              <li><a href="#services">Docker/Kubernetes</a></li>
+              <li><a href="#services">Terraform</a></li>
+              <li><a href="#services">CI/CD Pipelines</a></li>
             </ul>
           </div>
-            <form
-              >
-                <input
-                  class="footer-input"
-                />
-              </div>
-            </form>
+          <div class="grid-4-col footer-contact">
+            <h3 class="title-sm">Get in Touch</h3>
+            <p class="text">Have a project in mind? Let's discuss how I can help.</p>
+            <a href="mailto:abinash@devopsmind.me" class="btn small">Contact Me</a>
           </div>
         </div>
 
         <div class="bottom-footer">
+          <div class="copyright">
+            <p class="text">&copy; 2025 <span>Abinash V</span>. All rights reserved.</p>
+          </div>
           <div class="followme-wrap">
             <div class="back-btn-wrap">
-              <a href="#" class="back-btn">
+              <a href="#header" class="back-btn">
                 <i class="fas fa-chevron-up"></i>
               </a>
             </div>
