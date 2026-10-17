@@ -23,6 +23,19 @@
   nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
   document.addEventListener("keydown", (e) => e.key === "Escape" && setMenu(false));
 
+  // Subtle 3D tilt on the hero dashboard
+  const dash = document.querySelector(".dash");
+  if (dash && !reduceMotion && matchMedia("(hover: hover)").matches) {
+    const hv = dash.parentElement;
+    hv.addEventListener("mousemove", (e) => {
+      const r = hv.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      dash.style.transform = `perspective(1000px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg)`;
+    });
+    hv.addEventListener("mouseleave", () => (dash.style.transform = ""));
+  }
+
   // Scroll progress bar + hero parallax
   const progress = document.getElementById("scrollProgress");
   const heroVisual = document.querySelector(".hero-visual");
