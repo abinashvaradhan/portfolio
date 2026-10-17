@@ -902,20 +902,44 @@ h2 {
   margin-top: 40px;
 }
 .highlights div {
-  padding: 22px;
+  position: relative;
+  padding: 22px 22px 22px 26px;
   border-radius: var(--radius);
-  background: var(--grad);
-  color: #fff;
-  box-shadow: var(--shadow-lg);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--brand) 12%, var(--surface)), var(--surface) 75%);
+  border: 1px solid color-mix(in srgb, var(--brand) 30%, var(--border));
+  box-shadow: var(--shadow);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.highlights div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: var(--brand);
+  box-shadow: 0 0 14px var(--brand);
+}
+.highlights div:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow), 0 12px 30px -12px color-mix(in srgb, var(--brand) 55%, transparent);
 }
 .highlights strong {
-  display: block;
-  font-size: 1.5rem;
+  display: inline-block;
+  font-family: var(--display);
+  font-size: 1.6rem;
   letter-spacing: -0.02em;
+  padding: 0 6px;
+  margin-left: -6px;
+  border-radius: 6px;
+  background: linear-gradient(transparent 62%, color-mix(in srgb, var(--brand) 32%, transparent) 62%);
 }
 .highlights span {
+  display: block;
+  margin-top: 6px;
   font-size: 0.85rem;
-  opacity: 0.9;
+  color: var(--muted);
 }
 
 /* Expertise */
