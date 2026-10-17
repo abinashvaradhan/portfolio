@@ -1075,6 +1075,10 @@ h2 {
 .form-status.err {
   color: oklch(0.62 0.22 25);
 }
+.form-status a {
+  text-decoration: underline;
+  color: var(--brand);
+}
 
 /* Footer */
 .site-footer {

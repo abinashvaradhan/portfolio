@@ -173,7 +173,15 @@
         form.reset();
         show("Thanks! Your message was sent. I'll get back to you within 1 business day.", true);
       } catch {
-        show("Sorry, the message could not be sent. Please email abinash@devopsminds.io directly.", false);
+        const f = new FormData(form);
+        const body = `Name: ${f.get("fname") || ""} ${f.get("lname") || ""}\nEmail: ${f.get("email") || ""}\nPhone: ${f.get("phone") || ""}\n\n${f.get("message") || ""}`;
+        const href = `mailto:abinash@devopsminds.io?subject=${encodeURIComponent("Portfolio contact")}&body=${encodeURIComponent(body)}`;
+        status.className = "form-status err";
+        status.textContent = "Couldn't send automatically. ";
+        const a = document.createElement("a");
+        a.href = href;
+        a.textContent = "Send it with your email app instead";
+        status.append(a, ".");
       } finally {
         btn.disabled = false;
         btn.innerHTML = label;
