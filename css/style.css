@@ -179,6 +179,26 @@ ol {
 .btn-ghost:hover {
   border-color: var(--brand);
 }
+.btn-cv {
+  border-color: var(--brand);
+  animation: cv-pulse 1.8s ease-in-out infinite;
+}
+.btn-cv i {
+  color: var(--brand);
+  animation: cv-blink 1.8s ease-in-out infinite;
+}
+.btn-cv:hover,
+.btn-cv:focus-visible {
+  animation-play-state: paused;
+}
+@keyframes cv-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand) 55%, transparent); }
+  70%, 100% { box-shadow: 0 0 0 12px transparent; }
+}
+@keyframes cv-blink {
+  0%, 100% { opacity: 1; transform: translateY(0); }
+  50% { opacity: 0.35; transform: translateY(2px); }
+}
 .btn-sm {
   padding: 10px 18px;
   font-size: 0.875rem;
