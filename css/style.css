@@ -16,6 +16,7 @@
   --radius: 18px;
   --header-h: 68px;
   --font: "Geist", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --display: "Sora", "Geist", system-ui, sans-serif;
   --mono: "Geist Mono", ui-monospace, "SF Mono", monospace;
   color-scheme: light;
 }
@@ -373,12 +374,13 @@ ol {
 h1,
 h2,
 h3 {
-  letter-spacing: -0.025em;
+  font-family: var(--display);
+  letter-spacing: -0.03em;
   line-height: 1.15;
 }
 h1 {
-  font-size: clamp(2.2rem, 4.6vw, 3.4rem);
-  font-weight: 800;
+  font-size: clamp(2.1rem, 4.3vw, 3.2rem);
+  font-weight: 700;
 }
 .gradient-text {
   background: var(--grad-text);
