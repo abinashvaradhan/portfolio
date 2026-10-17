@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Abinash Varadhan | Senior DevOps &amp; Cloud Engineer</title>
-    <meta name="description" content="Abinash Varadhan - Senior DevOps Engineer with 8+ years of experience in AWS, GCP, Kubernetes, Terraform, CI/CD and cloud cost optimization." />
+    <meta name="description" content="Abinash Varadhan - Senior DevOps Engineer with 9+ years of experience in AWS, GCP, Kubernetes, Terraform, CI/CD and cloud cost optimization." />
     <meta name="keywords" content="DevOps, AWS, GCP, Kubernetes, Docker, Terraform, CI/CD, Cloud Infrastructure, SRE" />
     <meta name="author" content="Abinash Varadhan" />
     <meta name="theme-color" content="#0f1020" />
@@ -36,8 +36,8 @@
         "@type": "Person",
         "name": "Abinash Varadhan",
         "jobTitle": "Senior DevOps Engineer",
-        "email": "mailto:abinash@devopsmind.me",
-        "address": { "@type": "PostalAddress", "addressLocality": "Pollachi", "addressCountry": "IN" },
+        "email": "mailto:abinash@devopsminds.io",
+        "address": { "@type": "PostalAddress", "addressLocality": "Madurai", "addressCountry": "IN" },
         "knowsAbout": ["AWS", "GCP", "Kubernetes", "Terraform", "CI/CD", "Docker"]
       }
     </script>
@@ -56,6 +56,7 @@
         <nav id="primary-nav" class="nav-links" aria-label="Primary">
           <a href="#services">Services</a>
           <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
           <a href="#expertise">Expertise</a>
           <a href="#testimonials">Clients</a>
           <a href="#contact">Contact</a>
@@ -85,24 +86,50 @@
               Cloud &amp; DevOps engineering that <span class="gradient-text">ships faster and costs less.</span>
             </h1>
             <p class="lead">
-              I'm Abinash Varadhan, a Senior DevOps Engineer with 8+ years of experience building secure, scalable
+              I'm Abinash Varadhan, a Senior DevOps Engineer with 9+ years of experience building secure, scalable
               infrastructure on AWS and GCP, automating delivery with CI/CD, and running production Kubernetes platforms.
             </p>
             <div class="hero-cta">
               <a href="#contact" class="btn btn-primary">Start a project <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-              <a href="./resume/Abinash_V_Devops_8yrs.pdf" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fas fa-file-arrow-down" aria-hidden="true"></i> Download CV</a>
+              <a href="./resume/Abinash_Varadhan_DevOps_Resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fas fa-file-arrow-down" aria-hidden="true"></i> Download CV</a>
             </div>
             <ul class="hero-stats" aria-label="Highlights">
-              <li><strong data-count="8" data-suffix="+">8+</strong><span>Years experience</span></li>
+              <li><strong data-count="9" data-suffix="+">9+</strong><span>Years experience</span></li>
               <li><strong data-count="80" data-suffix="+">80+</strong><span>Projects delivered</span></li>
               <li><strong data-count="50" data-suffix="+">50+</strong><span>Happy clients</span></li>
               <li><strong data-count="99" data-suffix="%">99%</strong><span>Success rate</span></li>
             </ul>
           </div>
 
-          <div class="hero-visual">
-            <div class="hero-card">
-              <img src="./img/person-900.png" width="900" height="900" alt="Illustration of Abinash Varadhan working on a laptop" />
+          <div class="hero-visual" aria-label="Sample delivery pipeline and infrastructure plan">
+            <div class="console">
+              <div class="console-bar">
+                <span class="dots"><i></i><i></i><i></i></span>
+                <span class="console-title">prod-platform / pipeline</span>
+                <span class="live"><span class="dot"></span> live</span>
+              </div>
+
+              <ol class="pipeline">
+                <li style="--i: 0"><i class="fas fa-code-commit"></i><span>Commit</span><em>main</em></li>
+                <li style="--i: 1"><i class="fas fa-hammer"></i><span>Build &amp; test</span><em>Docker</em></li>
+                <li style="--i: 2"><i class="fas fa-shield-halved"></i><span>Security scan</span><em>CIS / SAST</em></li>
+                <li style="--i: 3"><i class="fas fa-cube"></i><span>Terraform plan</span><em>approved</em></li>
+                <li style="--i: 4"><i class="fas fa-dharmachakra"></i><span>Deploy to EKS</span><em>zero-downtime</em></li>
+              </ol>
+
+<pre class="code" aria-hidden="true"><span class="c"># infrastructure as code</span>
+<span class="k">module</span> <span class="s">"platform"</span> {
+  <span class="k">source</span>   = <span class="s">"./modules/eks"</span>
+  <span class="k">multi_az</span> = <span class="b">true</span>
+  <span class="k">backups</span>  = <span class="s">"velero"</span>
+  <span class="k">monitoring</span> = [<span class="s">"prometheus"</span>, <span class="s">"grafana"</span>]
+}</pre>
+
+              <div class="console-foot">
+                <span><i class="fas fa-circle-check"></i> Multi-cloud</span>
+                <span><i class="fas fa-circle-check"></i> GitOps</span>
+                <span><i class="fas fa-circle-check"></i> Hardened</span>
+              </div>
             </div>
             <div class="chip chip-1"><i class="fab fa-aws"></i> AWS</div>
             <div class="chip chip-2"><i class="fab fa-docker"></i> Docker</div>
@@ -238,8 +265,72 @@
         </div>
       </section>
 
+      <!-- Experience -->
+      <section class="section" id="experience">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="kicker">Experience</p>
+            <h2>Production-grade engineering, end to end</h2>
+            <p>Hands-on across infrastructure, security, reliability and delivery, from startups to regulated environments.</p>
+          </header>
+
+          <ol class="timeline">
+            <li class="tl-item reveal">
+              <div class="tl-head">
+                <h3>Senior DevOps Engineer</h3>
+                <span class="tl-org">Devon Software Services &middot; 2023 - 2026</span>
+              </div>
+              <ul class="bullets">
+                <li>Owned Tier-1 shared services for a global publishing leader, supporting millions of users at 99.99%+ availability.</li>
+                <li>Architected a centralized Kong API Gateway (EKS control plane, ECS Fargate data plane), onboarding 300+ APIs for 20+ teams at 8K-12K RPS.</li>
+                <li>Built OpenAPI-driven Jenkins pipelines that cut API onboarding time by ~70%; delivered Terraform and GitHub Actions IaC across environments.</li>
+                <li>Led multi-account AWS networking, DR exercises against RTO/RPO targets, Golden Signals observability with New Relic, and Kyverno policy enforcement.</li>
+              </ul>
+            </li>
+            <li class="tl-item reveal">
+              <div class="tl-head">
+                <h3>DevOps Engineer</h3>
+                <span class="tl-org">OptiSol Business Solutions &middot; 2021 - 2023</span>
+              </div>
+              <ul class="bullets">
+                <li>Implemented and tested Terraform-based disaster recovery for business continuity.</li>
+                <li>Enforced CFR-11 and Annex EU11 controls with AWS Config and Security Hub; built CI/CD with approval gates on CodePipeline and GitHub Actions.</li>
+                <li>Reduced operating costs by 30% by right-sizing EC2, RDS and OpenSearch.</li>
+              </ul>
+            </li>
+            <li class="tl-item reveal">
+              <div class="tl-head">
+                <h3>Senior Systems Engineer</h3>
+                <span class="tl-org">VVDN Technologies &middot; 2021</span>
+              </div>
+              <ul class="bullets">
+                <li>Introduced canary deployments on ECS for zero-downtime releases and automated delivery with Jenkins.</li>
+                <li>Hardened applications with AWS WAF custom rules, CrowdStrike Falcon, Rapid7 and SHAPE protection.</li>
+              </ul>
+            </li>
+            <li class="tl-item reveal">
+              <div class="tl-head">
+                <h3>Systems Engineer</h3>
+                <span class="tl-org">CatchPenguins Info Solutions &middot; 2017 - 2020</span>
+              </div>
+              <ul class="bullets">
+                <li>Redesigned infrastructure with ASG, ALB, NAT and Aurora Serverless; containerized and migrated workloads to Amazon ECS.</li>
+                <li>Automated incremental Restic backups to S3 and improved latency for 10,000+ users with CloudFront.</li>
+              </ul>
+            </li>
+          </ol>
+
+          <div class="highlights reveal">
+            <div><strong>99.99%+</strong><span>Tier-1 service availability</span></div>
+            <div><strong>300+</strong><span>APIs onboarded on Kong</span></div>
+            <div><strong>~70%</strong><span>faster API onboarding</span></div>
+            <div><strong>30%</strong><span>cloud cost reduction</span></div>
+          </div>
+        </div>
+      </section>
+
       <!-- Expertise -->
-      <section class="section" id="expertise">
+      <section class="section section-alt" id="expertise">
         <div class="container split">
           <div class="reveal">
             <p class="kicker">About</p>
@@ -267,26 +358,26 @@
             </div>
             <div class="stack-group">
               <h3><i class="fas fa-cube"></i> Automation &amp; IaC</h3>
-              <ul class="tags"><li>Terraform</li><li>Ansible</li><li>CloudFormation</li><li>Bash</li><li>Python</li></ul>
+              <ul class="tags"><li>Terraform</li><li>Terragrunt</li><li>Atlantis</li><li>Ansible</li><li>Packer</li><li>CloudFormation</li><li>Bash</li><li>Python</li><li>Boto3</li></ul>
             </div>
             <div class="stack-group">
               <h3><i class="fas fa-code-branch"></i> CI/CD</h3>
-              <ul class="tags"><li>Jenkins</li><li>GitHub Actions</li><li>GitLab CI</li></ul>
+              <ul class="tags"><li>Jenkins</li><li>GitHub Actions</li><li>GitLab CI</li><li>CodePipeline</li><li>ArgoCD</li></ul>
             </div>
             <div class="stack-group">
               <h3><i class="fas fa-chart-area"></i> Observability</h3>
-              <ul class="tags"><li>Prometheus</li><li>Grafana</li><li>Loki</li><li>ELK</li></ul>
+              <ul class="tags"><li>Prometheus</li><li>Grafana</li><li>Loki</li><li>ELK / OpenSearch</li><li>Splunk</li><li>New Relic</li></ul>
             </div>
             <div class="stack-group">
               <h3><i class="fas fa-shield-halved"></i> Security &amp; Backup</h3>
-              <ul class="tags"><li>Vault</li><li>KMS</li><li>Velero</li><li>Restic</li></ul>
+              <ul class="tags"><li>Vault</li><li>KMS</li><li>Security Hub</li><li>AWS Config</li><li>CrowdStrike</li><li>Velero</li><li>Restic</li></ul>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Testimonials -->
-      <section class="section section-alt" id="testimonials">
+      <section class="section" id="testimonials">
         <div class="container">
           <header class="section-head reveal">
             <p class="kicker">Testimonials</p>
@@ -327,14 +418,15 @@
               <h2>Let's talk about your project</h2>
               <p class="muted">Share a few details about your goals and requirements so our first conversation is focused and productive.</p>
               <ul class="info-list">
-                <li><i class="fas fa-paper-plane"></i><a href="mailto:abinash@devopsmind.me">abinash@devopsmind.me</a></li>
-                <li><i class="fas fa-location-dot"></i><span>Pollachi, India</span></li>
+                <li><i class="fas fa-paper-plane"></i><a href="mailto:abinash@devopsminds.io">abinash@devopsminds.io</a></li>
+                <li><i class="fas fa-location-dot"></i><span>Madurai, India</span></li>
                 <li><i class="fas fa-clock"></i><span>Typically replies within 1 business day</span></li>
               </ul>
             </div>
 
-            <form class="contact-form" action="https://formsubmit.co/fbe30d8ad08199aa18d939301659dec5" method="POST">
+            <form class="contact-form" action="https://formsubmit.co/abinash@devopsminds.io" method="POST" novalidate>
               <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_subject" value="Portfolio contact" />
               <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
@@ -348,6 +440,7 @@
               </div>
               <label>How can I help?<textarea name="message" rows="5" required></textarea></label>
               <button type="submit" class="btn btn-primary">Send message <i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
             </form>
           </div>
         </div>
@@ -372,9 +465,9 @@
         </nav>
         <div>
           <h3>Connect</h3>
-          <a href="mailto:abinash@devopsmind.me">abinash@devopsmind.me</a>
+          <a href="mailto:abinash@devopsminds.io">abinash@devopsminds.io</a>
           <a href="https://github.com/abinashvaradhan" target="_blank" rel="noopener">GitHub</a>
-          <a href="./resume/Abinash_V_Devops_8yrs.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+          <a href="./resume/Abinash_Varadhan_DevOps_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
         </div>
       </div>
       <div class="container footer-bottom">

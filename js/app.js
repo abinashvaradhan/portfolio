@@ -126,13 +126,42 @@
   });
   counters.forEach((c) => countObserver.observe(c));
 
-  // Contact form feedback
+  // Contact form: submit via AJAX, fall back to email on failure
   const form = document.querySelector(".contact-form");
   if (form) {
-    form.addEventListener("submit", () => {
-      const btn = form.querySelector("button[type=submit]");
+    const status = document.getElementById("formStatus");
+    const btn = form.querySelector("button[type=submit]");
+    const label = btn.innerHTML;
+    const show = (msg, ok) => {
+      status.textContent = msg;
+      status.className = "form-status " + (ok ? "ok" : "err");
+    };
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
       btn.disabled = true;
       btn.textContent = "Sending...";
+      show("", true);
+      try {
+        const res = await fetch(form.action.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: new FormData(form),
+        });
+        const data = await res.json();
+        if (!res.ok || String(data.success) !== "true") throw new Error(data.message || "failed");
+        form.reset();
+        show("Thanks! Your message was sent. I'll get back to you within 1 business day.", true);
+      } catch {
+        show("Sorry, the message could not be sent. Please email abinash@devopsminds.io directly.", false);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = label;
+      }
     });
   }
 
