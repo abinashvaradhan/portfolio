@@ -163,11 +163,25 @@
       btn.textContent = "Sending...";
       show("", true);
       try {
-        const res = await fetch(form.action.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
-          method: "POST",
-          headers: { Accept: "application/json" },
-          body: new FormData(form),
-        });
+        const key = form.dataset.web3formsKey;
+        const fd = new FormData(form);
+        let res;
+        if (key) {
+          fd.append("access_key", key);
+          fd.append("subject", "Portfolio contact");
+          fd.append("from_name", `${fd.get("fname") || ""} ${fd.get("lname") || ""}`.trim());
+          res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: fd,
+          });
+        } else {
+          res = await fetch(form.action.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: fd,
+          });
+        }
         const data = await res.json();
         if (!res.ok || String(data.success) !== "true") throw new Error(data.message || "failed");
         form.reset();
