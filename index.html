@@ -101,40 +101,52 @@
             </ul>
           </div>
 
-          <div class="hero-visual" aria-label="Sample delivery pipeline and infrastructure plan">
-            <div class="console">
-              <div class="console-bar">
-                <span class="dots"><i></i><i></i><i></i></span>
-                <span class="console-title">prod-platform / pipeline</span>
-                <span class="live"><span class="dot"></span> live</span>
+          <div class="hero-visual" aria-label="Platform reliability dashboard">
+            <div class="dash">
+              <div class="dash-head">
+                <div>
+                  <p class="dash-eyebrow">Production platform</p>
+                  <h3>Reliability overview</h3>
+                </div>
+                <span class="live"><span class="dot"></span> All systems operational</span>
               </div>
 
-              <ol class="pipeline">
-                <li style="--i: 0"><i class="fas fa-code-commit"></i><span>Commit</span><em>main</em></li>
-                <li style="--i: 1"><i class="fas fa-hammer"></i><span>Build &amp; test</span><em>Docker</em></li>
-                <li style="--i: 2"><i class="fas fa-shield-halved"></i><span>Security scan</span><em>CIS / SAST</em></li>
-                <li style="--i: 3"><i class="fas fa-cube"></i><span>Terraform plan</span><em>approved</em></li>
-                <li style="--i: 4"><i class="fas fa-dharmachakra"></i><span>Deploy to EKS</span><em>zero-downtime</em></li>
+              <div class="kpis">
+                <div class="kpi"><span>Availability</span><strong>99.99%</strong><em>Tier-1 services</em></div>
+                <div class="kpi"><span>APIs managed</span><strong>300+</strong><em>20+ teams</em></div>
+                <div class="kpi"><span>Cloud cost</span><strong>-30%</strong><em>right-sizing</em></div>
+              </div>
+
+              <div class="spark">
+                <div class="spark-top"><span>Requests / sec</span><b>8K - 12K RPS</b></div>
+                <svg viewBox="0 0 300 70" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="currentColor" stop-opacity=".35" />
+                      <stop offset="1" stop-color="currentColor" stop-opacity="0" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M0 52 L20 46 L40 50 L60 38 L80 42 L100 30 L120 36 L140 24 L160 32 L180 20 L200 28 L220 16 L240 24 L260 14 L280 20 L300 10 L300 70 L0 70Z" fill="url(#sg)" />
+                  <path class="spark-line" d="M0 52 L20 46 L40 50 L60 38 L80 42 L100 30 L120 36 L140 24 L160 32 L180 20 L200 28 L220 16 L240 24 L260 14 L280 20 L300 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke" />
+                </svg>
+              </div>
+
+              <ol class="flow" aria-label="Delivery pipeline">
+                <li style="--i: 0"><i class="fas fa-code-commit"></i><span>Commit</span></li>
+                <li style="--i: 1"><i class="fas fa-hammer"></i><span>Build</span></li>
+                <li style="--i: 2"><i class="fas fa-shield-halved"></i><span>Scan</span></li>
+                <li style="--i: 3"><i class="fas fa-cube"></i><span>Plan</span></li>
+                <li style="--i: 4"><i class="fas fa-dharmachakra"></i><span>Deploy</span></li>
               </ol>
 
-<pre class="code" aria-hidden="true"><span class="c"># infrastructure as code</span>
-<span class="k">module</span> <span class="s">"platform"</span> {
-  <span class="k">source</span>   = <span class="s">"./modules/eks"</span>
-  <span class="k">multi_az</span> = <span class="b">true</span>
-  <span class="k">backups</span>  = <span class="s">"velero"</span>
-  <span class="k">monitoring</span> = [<span class="s">"prometheus"</span>, <span class="s">"grafana"</span>]
-}</pre>
-
-              <div class="console-foot">
-                <span><i class="fas fa-circle-check"></i> Multi-cloud</span>
-                <span><i class="fas fa-circle-check"></i> GitOps</span>
-                <span><i class="fas fa-circle-check"></i> Hardened</span>
+              <div class="dash-tags">
+                <span><i class="fab fa-aws"></i> AWS</span>
+                <span><i class="fas fa-dharmachakra"></i> Kubernetes</span>
+                <span><i class="fab fa-docker"></i> Docker</span>
+                <span><i class="fas fa-cube"></i> Terraform</span>
+                <span><i class="fab fa-jenkins"></i> CI/CD</span>
               </div>
             </div>
-            <div class="chip chip-1"><i class="fab fa-aws"></i> AWS</div>
-            <div class="chip chip-2"><i class="fab fa-docker"></i> Docker</div>
-            <div class="chip chip-3"><i class="fas fa-dharmachakra"></i> Kubernetes</div>
-            <div class="chip chip-4"><i class="fab fa-jenkins"></i> CI/CD</div>
           </div>
         </div>
       </section>
