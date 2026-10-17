@@ -63,6 +63,21 @@
 
   // Active nav link
   const links = [...nav.querySelectorAll("a")];
+  const ind = nav.querySelector(".nav-ind");
+  const moveInd = () => {
+    const a = nav.querySelector("a.active");
+    if (!a || !ind) return void (ind && (ind.style.opacity = 0));
+    const first = ind.style.opacity !== "1";
+    if (first) ind.style.transition = "none";
+    ind.style.width = a.offsetWidth + "px";
+    ind.style.transform = `translateX(${a.offsetLeft}px)`;
+    ind.style.opacity = 1;
+    if (first) {
+      ind.offsetWidth;
+      ind.style.transition = "";
+    }
+  };
+  addEventListener("resize", moveInd);
   const sectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -70,6 +85,7 @@
         links.forEach((a) =>
           a.classList.toggle("active", a.getAttribute("href") === `#${entry.target.id}`)
         );
+        moveInd();
       });
     },
     { rootMargin: "-40% 0px -55% 0px" }
