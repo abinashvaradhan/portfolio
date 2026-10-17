@@ -835,16 +835,14 @@ h2 {
 .tl-item::after {
   content: "";
   position: absolute;
-  left: 0;
-  top: 14px;
-  bottom: 14px;
-  width: 4px;
-  border-radius: 0 4px 4px 0;
-  background: var(--brand);
-  box-shadow: 0 0 14px var(--brand);
-  transform: scaleY(0);
+  inset: -1px;
+  border-radius: inherit;
+  border-left: 4px solid var(--brand);
+  clip-path: inset(0 calc(100% - 22px) 0 0);
+  filter: drop-shadow(0 0 6px var(--brand));
+  pointer-events: none;
   opacity: 0;
-  transition: transform 0.35s, opacity 0.35s;
+  transition: opacity 0.35s;
 }
 .tl-item.is-active {
   background: linear-gradient(90deg, color-mix(in srgb, var(--brand) 14%, var(--surface)), var(--surface) 70%);
@@ -852,7 +850,6 @@ h2 {
   box-shadow: var(--shadow), 0 10px 30px -12px color-mix(in srgb, var(--brand) 50%, transparent);
 }
 .tl-item.is-active::after {
-  transform: scaleY(1);
   opacity: 1;
 }
 .tl-item.is-active::before {
@@ -913,13 +910,12 @@ h2 {
 .highlights div::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 16px;
-  bottom: 16px;
-  width: 4px;
-  border-radius: 0 4px 4px 0;
-  background: var(--brand);
-  box-shadow: 0 0 14px var(--brand);
+  inset: -1px;
+  border-radius: inherit;
+  border-left: 4px solid var(--brand);
+  clip-path: inset(0 calc(100% - 22px) 0 0);
+  filter: drop-shadow(0 0 6px var(--brand));
+  pointer-events: none;
 }
 .highlights div:hover {
   transform: translateY(-3px);
