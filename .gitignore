@@ -4,3 +4,6 @@ img/.DS_Store
 
 # JetBrains IDE project settings
 .idea/
+
+# VS Code settings
+.vscode/
