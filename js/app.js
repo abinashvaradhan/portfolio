@@ -23,17 +23,116 @@
   nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
   document.addEventListener("keydown", (e) => e.key === "Escape" && setMenu(false));
 
-  // Subtle 3D tilt on the hero dashboard
-  const dash = document.querySelector(".dash");
-  if (dash && !reduceMotion && matchMedia("(hover: hover)").matches) {
-    const hv = dash.parentElement;
-    hv.addEventListener("mousemove", (e) => {
-      const r = hv.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5;
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      dash.style.transform = `perspective(1000px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg)`;
+  // Hero: interactive network canvas + typed terminal
+  const canvas = document.getElementById("heroCanvas");
+  if (canvas) {
+    const ctx = canvas.getContext("2d");
+    const hero = canvas.parentElement;
+    const mouse = { x: -999, y: -999 };
+    let w, h, nodes = [], visible = true, color = "129,140,248";
+    const init = () => {
+      const dpr = Math.min(devicePixelRatio || 1, 2);
+      w = hero.clientWidth;
+      h = hero.clientHeight;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      nodes = Array.from({ length: Math.round((w * h) / 16000) }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+      }));
+      color = root.dataset.theme === "light" ? "79,70,229" : "129,140,248";
+    };
+    const draw = () => {
+      ctx.clearRect(0, 0, w, h);
+      for (const p of nodes) {
+        if (!reduceMotion) {
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > w) p.vx *= -1;
+          if (p.y < 0 || p.y > h) p.vy *= -1;
+        }
+        ctx.fillStyle = `rgba(${color},0.6)`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 1.6, 0, 6.283);
+        ctx.fill();
+      }
+      for (let i = 0; i < nodes.length; i++) {
+        for (let k = i + 1; k < nodes.length; k++) {
+          const a = nodes[i], b = nodes[k];
+          const d = Math.hypot(a.x - b.x, a.y - b.y);
+          if (d < 130) {
+            ctx.strokeStyle = `rgba(${color},${(1 - d / 130) * 0.3})`;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
+        const m = Math.hypot(nodes[i].x - mouse.x, nodes[i].y - mouse.y);
+        if (m < 170) {
+          ctx.strokeStyle = `rgba(${color},${(1 - m / 170) * 0.7})`;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+      }
+      if (visible && !reduceMotion) requestAnimationFrame(draw);
+    };
+    init();
+    draw();
+    hero.addEventListener("mousemove", (e) => {
+      const r = hero.getBoundingClientRect();
+      mouse.x = e.clientX - r.left;
+      mouse.y = e.clientY - r.top;
     });
-    hv.addEventListener("mouseleave", () => (dash.style.transform = ""));
+    hero.addEventListener("mouseleave", () => (mouse.x = mouse.y = -999));
+    addEventListener("resize", () => {
+      init();
+      if (reduceMotion) draw();
+    });
+    new MutationObserver(() => {
+      color = root.dataset.theme === "light" ? "79,70,229" : "129,140,248";
+      if (reduceMotion) draw();
+    }).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+    new IntersectionObserver(([en]) => {
+      const was = visible;
+      visible = en.isIntersecting;
+      if (visible && !was) draw();
+    }).observe(hero);
+  }
+
+  const typedEl = document.getElementById("typed");
+  if (typedEl) {
+    const cmds = [
+      "terraform apply -auto-approve",
+      "kubectl rollout status deploy/api",
+      "argocd app sync platform --prune",
+      "aws ce get-cost-and-usage  # -30%",
+    ];
+    if (reduceMotion) {
+      typedEl.textContent = cmds[0];
+    } else {
+      let ci = 0, i = 0, del = false;
+      const tick = () => {
+        const c = cmds[ci];
+        typedEl.textContent = c.slice(0, i);
+        let wait = del ? 25 : 55;
+        if (!del && i === c.length) {
+          del = true;
+          wait = 1600;
+        } else if (del && i === 0) {
+          del = false;
+          ci = (ci + 1) % cmds.length;
+          wait = 350;
+        } else i += del ? -1 : 1;
+        setTimeout(tick, wait);
+      };
+      tick();
+    }
   }
 
   // Scroll progress bar + hero parallax
