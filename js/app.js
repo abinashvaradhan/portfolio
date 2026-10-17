@@ -95,6 +95,21 @@
     if (s) sectionObserver.observe(s);
   });
 
+  // Active experience card
+  const tlItems = [...document.querySelectorAll(".tl-item")];
+  if (tlItems.length && "IntersectionObserver" in window) {
+    tlItems[0].classList.add("is-active");
+    const tlObserver = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((en) => {
+          if (!en.isIntersecting) return;
+          tlItems.forEach((t) => t.classList.toggle("is-active", t === en.target));
+        }),
+      { rootMargin: "-45% 0px -45% 0px" }
+    );
+    tlItems.forEach((t) => tlObserver.observe(t));
+  }
+
   // Reveal on scroll, staggered within each grid
   const reveals = document.querySelectorAll(".reveal");
   reveals.forEach((el) => {

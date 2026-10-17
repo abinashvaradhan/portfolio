@@ -829,6 +829,35 @@ h2 {
   border: 3px solid var(--brand);
   box-shadow: 0 0 0 5px color-mix(in srgb, var(--brand) 18%, transparent);
 }
+.tl-item {
+  transition: background 0.35s, border-color 0.35s, box-shadow 0.35s;
+}
+.tl-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: var(--brand);
+  box-shadow: 0 0 14px var(--brand);
+  transform: scaleY(0);
+  opacity: 0;
+  transition: transform 0.35s, opacity 0.35s;
+}
+.tl-item.is-active {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--brand) 14%, var(--surface)), var(--surface) 70%);
+  border-color: color-mix(in srgb, var(--brand) 40%, var(--border));
+  box-shadow: var(--shadow), 0 10px 30px -12px color-mix(in srgb, var(--brand) 50%, transparent);
+}
+.tl-item.is-active::after {
+  transform: scaleY(1);
+  opacity: 1;
+}
+.tl-item.is-active::before {
+  background: var(--brand);
+}
 .tl-head {
   display: flex;
   flex-wrap: wrap;
@@ -1219,6 +1248,7 @@ h2 {
   }
   .nav-links a.active {
     background: var(--brand-soft);
+    box-shadow: inset 4px 0 0 var(--brand);
   }
 }
 
